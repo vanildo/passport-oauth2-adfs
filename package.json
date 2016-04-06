@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://hub.jazz.net/git/vanildovanni/passport-oauth2-adfs"
+    "url": "https://github.com/vanildo/passport-oauth2-adfs.git"
   },
   "licenses": [
     {
