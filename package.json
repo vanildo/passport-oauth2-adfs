@@ -1,0 +1,48 @@
+{
+  "name": "passport-oauth2-adfs",
+  "version": "1.0.0",
+  "description": "OAuth 2.0 ADFS authentication strategy for Passport.",
+  "keywords": [
+    "passport",
+    "auth",
+    "authn",
+    "authentication",
+    "authz",
+    "authorization",
+    "oauth",
+    "oauth2"
+  ],
+  "author": {
+    "name": "Vanildo Vanni",
+    "email": "vanildo.vanni@gmail.com",
+    "url": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://hub.jazz.net/git/vanildovanni/passport-oauth2-adfs"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "main": "./lib",
+  "dependencies": {
+    "passport-strategy": "1.x.x",
+    "oauth": "0.9.x",
+    "uid2": "0.0.x"
+  },
+  "devDependencies": {
+    "mocha": "1.x.x",
+    "chai": "1.x.x",
+    "chai-passport-strategy": "0.2.x"
+  },
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha --reporter spec --require test/bootstrap/node test/*.test.js test/**/*.test.js"
+  },
+  "_id": "passport-oauth2-adfs@1.0.0"
+}
