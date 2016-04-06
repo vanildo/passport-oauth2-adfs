@@ -31,7 +31,6 @@
   "main": "./lib",
   "dependencies": {
     "passport-strategy": "1.x.x",
-    "oauth": "./node_modules/oauth",
     "uid2": "0.0.x"
   },
   "devDependencies": {
