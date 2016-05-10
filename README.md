@@ -8,20 +8,11 @@ unobtrusively integrated into any application or framework that supports
 [Connect](http://www.senchalabs.org/connect/)-style middleware, including
 [Express](http://expressjs.com/).
 
-Note that this strategy provides generic OAuth 2.0 support.  In many cases, a
-provider-specific strategy can be used instead, which cuts down on unnecessary
-configuration, and accommodates any provider-specific quirks.  See the
-[list](https://github.com/jaredhanson/passport/wiki/Strategies) for supported
-providers.
-
-Developers who need to implement authentication against an OAuth 2.0 provider
-that is not already supported are encouraged to sub-class this strategy.  If you
-choose to open source the new provider-specific strategy, please add it to the
-list so other people can find it.
+Note that this strategy provides OAuth 2.0 support for ADFS.
 
 ## Install
 
-    $ npm install passport-oauth2
+    $ npm install https://github.com/vanildo/passport-oauth2-adfs.git
 
 ## Usage
 
@@ -34,12 +25,13 @@ requires a `verify` callback, which receives an access token and profile,
 and calls `done` providing a user.
 
     passport.use(new OAuth2Strategy({
-        authorizationURL: 'https://www.example.com/oauth2/authorize',
-        tokenURL: 'https://www.example.com/oauth2/token',
-        clientID: EXAMPLE_CLIENT_ID,
-        clientSecret: EXAMPLE_CLIENT_SECRET,
-        callbackURL: "http://localhost:3000/auth/example/callback"
-      },
+      authorizationURL: 'https://adfsServer/adfs/oauth2/authorize',
+      resource: 'https://app/auth/sso/callback',
+      tokenURL: 'https://adfsServer/adfs/oauth2/token',
+      clientID: 'CLIENT_ID',
+      clientSecret: 'EXAMPLE_CLIENT_SECRET',
+      callbackURL: 'https://app/auth/sso/callback'
+    },
       function(accessToken, refreshToken, profile, done) {
         User.findOrCreate({ exampleId: profile.id }, function (err, user) {
           return done(err, user);
